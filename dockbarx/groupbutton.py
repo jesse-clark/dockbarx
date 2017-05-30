@@ -2640,9 +2640,13 @@ class GroupMenu(gobject.GObject):
         # Recent and most used files
         zg_identifier = self.add_separator(identifier="zg_separator")
         zg_identifier.set_no_show_all(True)
+        ## hide zg_separator
+        zg_identifier.hide()
         for name in (_("Recent"), _("Most used"), _("Related")):
             sm = self.add_submenu(name)
             sm.set_no_show_all(True)
+            ## hide zg_separator submenus
+            sm.hide()
         # Floating Window Panel
         if locked_popup or use_locked_popup:
             self.add_separator()
